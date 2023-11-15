@@ -196,6 +196,26 @@ def end_review():
     review_window.withdraw()
     main_window.deiconify()
 
+def count_learned():
+    count = 0
+    for item in dictionary_word_list:
+        if item['learned'] == 1:
+            count += 1
+    return count
+
+def count_reviewed():
+    count = 0
+    for item in dictionary_word_list:
+        if item['today_correct'] == 1:
+            count += 1
+    return count
+
+def count_word():
+    learned_num = count_learned()
+    reviewed_num = count_reviewed()
+    all_num = len(dictionary_word_list)
+    word_count_label.config(text=f"已学习{learned_num}个单词，\n今日复习{reviewed_num}个单词，\n共{all_num}个单词。")
+
 main_window = tk.Tk()
 main_window.title("主页面")
 main_window.geometry("100x100")
@@ -235,6 +255,11 @@ review_window = tk.Toplevel(main_window)
 review_window.title("复习")
 review_window.geometry("600x600")
 
+word_count_label = tk.Label(main_window, text="")
+word_count_label.pack()
+
+update_word_count_button = tk.Button(main_window, text="学习进度", command=count_word)
+update_word_count_button.pack()
 
 word_label_review = tk.Label(review_window, text="", font=("Arial", 24))
 word_label_review.pack()
