@@ -68,6 +68,8 @@ def init_loadlist(dictionary_word_list):
         day_diff = date_diff(item['update_day'],today)
         item['memory_level'] -= day_mem_level_map(day_diff)
         item['update_day'] = today
+        if day_diff > 0:
+            item['today_correct'] = 0
     return dictionary_word_list
 
 file_path = config['learning_dictionary']

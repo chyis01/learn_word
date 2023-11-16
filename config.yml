@@ -1,6 +1,11 @@
 learn_word_num: 5
-learning_dictionary: 'libraries/6级词汇词以类记.json'
-# learning_dictionary: 'libraries/黄皮书六级大纲词汇背诵词典.json'
-pre_process_origin_file_path: 'libraries/6级词汇词以类记.csv'
 memory_level_correct: 20
 memory_level_wrong: -10
+
+# 1
+learning_dictionary: 'libraries/6级词汇词以类记.json'
+pre_process_origin_file_path: 'libraries/6级词汇词以类记.csv'
+
+# 2
+# learning_dictionary: 'libraries/黄皮书六级大纲词汇背诵词典.json'
+# pre_process_origin_file_path: 'libraries/黄皮书六级大纲词汇背诵词典.csv'

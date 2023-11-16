@@ -3,6 +3,8 @@ import datetime
 import random
 import json, yaml
 
+day_offset = 0
+
 with open('config.yml', 'r', encoding='utf-8') as f:
     config = yaml.safe_load(f)
 
@@ -20,7 +22,7 @@ def csv_to_dict(file_path):
     return dict_list
 
 def get_today():
-    return datetime.date.today().strftime('%Y-%m-%d')
+    return (datetime.date.today() - datetime.timedelta(days=day_offset)).strftime('%Y-%m-%d')
 
 def list_dict_to_json_file(list_dict, file_path):
     with open(file_path, 'w', encoding='utf-8') as file:
