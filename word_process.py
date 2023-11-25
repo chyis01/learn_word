@@ -27,7 +27,7 @@ def choice_learn_word(learn_word_list):
     return learn_word_list.pop()
 
 def get_review_word_list(dictionary_word_list, learn_word_num):
-    '''从dictionary_word_list中选取learned字段为0的前learn_word_num个单词'''
+    '''从dictionary_word_list中选取learned字段为1的前learn_word_num个单词'''
     review_word_list = []
     for item in dictionary_word_list:
         if item['learned'] == 1:
